@@ -1,4 +1,5 @@
 import streamlit as st
+from scrape import scrape_website
 
 st.title("AI Web Scraper")
 url = st.text_input("Enter the URL to scrape:")
@@ -10,5 +11,7 @@ if st.button("Scrape"):
       # For example, using requests and BeautifulSoup
       # But for now, we will just simulate a response
       st.write("Data scraped successfully!")
+      result = scrape_website(url)
+      print(result)
   else:
       st.error("Please enter a valid URL.")
